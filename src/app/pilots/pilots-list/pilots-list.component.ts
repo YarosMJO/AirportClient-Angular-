@@ -14,7 +14,6 @@ import { Pilot } from '../../Models/Pilot';
 export class PilotsListComponent implements OnInit {
 
   Pilots: Array<Pilot>;
-
   public Name: string;
   public Surname: string;
   public Birthday: Date;
@@ -29,7 +28,6 @@ export class PilotsListComponent implements OnInit {
 
   getAll() {
     this.service.getAll().subscribe((items:Array<Pilot>) => {
-      alert("Pilots");
       this.Pilots = items; });
   }
 
