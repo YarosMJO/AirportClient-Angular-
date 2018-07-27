@@ -1,0 +1,57 @@
+<section>
+    <h1>Our pilots</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>FlightNumber</th>
+            <th>DepartureDate</th>
+            <th>Crew Id</th>
+            <th>Plane Id</th>
+            <th> </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor="let t of Departures">
+            <td>{{t?.flightNumber}}</td>
+            <td>{{t?.departureDate}}</td>
+            <!-- <td>{{t?.crew.id}}</td>
+            <td>{{t?.plane.id}}</td> -->
+            <td>
+              <!-- <button (click)="delete(t.id)" ><i class="far fa-trash-alt"></i></button>
+              <button [routerLink]="['/pilots',t.id]" ><i class="far fa-edit"></i></button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+   <!-- <div class="addElement">
+      <div class="row">
+          <form class="col-md-4">
+              <h3>Edit</h3>
+              <div >
+                <label for="pilotName">FlightNumber:</label>  
+                <input name = "pilotName"  [(ngModel)]="FlightNumber"/>
+              </div> -->
+              <!-- <div>
+                <label for="pilotSurname">Surname:</label>
+                <input name = "pilotSurname"  [(ngModel)]="Surname"/>
+              </div>
+              <div>
+                <label for="pilotBirthday">Birthday:</label>
+                <input name = "pilotBirthday" class="sandbox-container input" [(ngModel)]="Birthday"/>
+              </div>
+              <div >
+                <label for="pilotExperience">Experience:</label>
+                <input name = "pilotExperience" type = "number" [(ngModel)]="Experience"/>
+              </div> -->
+              <!-- <button type="button" class="btn btn-primary"  (click)="add()">Save</button>
+          </form>
+      </div>
+  </div> -->

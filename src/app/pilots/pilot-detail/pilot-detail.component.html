@@ -1,0 +1,24 @@
+
+<div>
+    <h1>Ticket Info</h1>
+</div>
+<div *ngIf="Pilot" >
+    <div><h4>Pilot id : {{Pilot.id}}</h4></div>
+    <hr>
+    <div >
+        Pilot name: <input  value="{{Pilot?.name}}" placeholder="{{Pilot?.name}}" 
+        name="pilotName" [(ngModel)]="Pilot.name" />
+    </div>
+    <div >
+         Pilot surname: <input  value="{{Pilot?.surname}}" placeholder="{{Pilot?.surname}}" 
+        name="pilotSurname" [(ngModel)]="Pilot.surname" />
+    </div>
+    <div >
+        Pilot birthday: <input value="{{Pilot?.birthday}}" placeholder="{{Pilot?.birthday}}" 
+        name="pilotBirthday" [(ngModel)]="Pilot.birthday" />
+    </div>
+    <div >
+        <button type="button"  (click)="update(Pilot.id)">Update</button>
+        <button type="button"  (click)="backClicked()">Back</button>
+    </div>
+</div>
