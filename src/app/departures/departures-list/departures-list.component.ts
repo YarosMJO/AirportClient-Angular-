@@ -31,7 +31,9 @@ export class DeparturesListComponent implements OnInit {
 
   getAll() {
     this.service.getAll().subscribe((items:Array<Departure>) => {
+      alert("Departure");
       this.Departures = items; });
+      
   }
 
   add(){

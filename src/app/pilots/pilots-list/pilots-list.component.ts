@@ -29,6 +29,7 @@ export class PilotsListComponent implements OnInit {
 
   getAll() {
     this.service.getAll().subscribe((items:Array<Pilot>) => {
+      alert("Pilots");
       this.Pilots = items; });
   }
 
@@ -40,8 +41,9 @@ export class PilotsListComponent implements OnInit {
     });
   }
 
-  delete(id: number): void {
+ private delete(id: number): void {
     this.service.delete(id).subscribe( result => {
+      
       this.getAll();
     });   
   }
