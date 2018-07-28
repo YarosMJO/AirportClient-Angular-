@@ -36,23 +36,24 @@
 
 <div class="addElement">
     <div class="сontainer">
-  <div class="row">
-    <div class="col-md-4 col-sm offset-md-4">
-      <form >
-          <h3>Edit</h3>
-        
-            <input class="input" placeholder= "Name" name = "pilotName"  [(ngModel)]="Name"/>     
-            <input class="input" placeholder= "Surname" name = "pilotSurname"  [(ngModel)]="Surname"/>
-   
-            <label  for="pilotBirthday">Birthday:</label>
-            <input class="input" name = "pilotBirthday" type = "date" [(ngModel)]="Birthday"/>
- 
+      <div class="row">
+        <div class="col-md-4 col-sm offset-md-4">
+          <form >
+              <h3>Add</h3>
+              <label  for="pilotName">Name:</label>
+                <input class="input" placeholder= "Name" name = "pilotName"  [(ngModel)]="Name"/>   
+                <label  for="pilotSurname">Surname:</label>  
+                <input class="input" placeholder= "Surname" name = "pilotSurname"  [(ngModel)]="Surname"/>
+      
+                <label  for="pilotBirthday">Birthday:</label>
+                <input class="input" name = "pilotBirthday" type = "date" [(ngModel)]="Birthday"/>
+    
+                <label  for="pilotExperience">Experience:</label>  
+                <input class="input" placeholder="Experience" name = "pilotExperience" type = "number" [(ngModel)]="Experience"/>
           
-            <input class="input" placeholder="Experience" name = "pilotExperience" type = "number" [(ngModel)]="Experience"/>
-       
-          <button type="button" class="btn btn-primary"  (click)="add()">Save</button>
-      </form>
-    </div>
-  </div>
+              <button type="button" class="btn btn-primary"  (click)="add()">Add</button>
+          </form>
+        </div>
+      </div>
   </div>
 </div>

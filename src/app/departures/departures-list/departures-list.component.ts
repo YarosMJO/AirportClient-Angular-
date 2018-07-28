@@ -35,20 +35,23 @@ export class DeparturesListComponent implements OnInit {
   }
 
   add(){
-   this.Crewservice.get(this.Crew).subscribe(
-      result =>{
-          this.newCrew = result;
-      });
-      this.Crewservice.get(this.Plane).subscribe(
-        result =>{
-            this.newPlane = result;
-        });
+  //  this.Crewservice.get(this.Crew).subscribe(
+  //     result =>{
+  //         this.newCrew = result;
+  //     });
+  //     this.Crewservice.get(this.Plane).subscribe(
+  //       result =>{
+  //           this.newPlane = result;
+  //       });
 
-    let item = new Departure(this.FlightNumber,this.DepartureDate,this.newCrew,this.newPlane);
-    this.service.add(item).subscribe(result=>{
-      this.Departures.push(item);
-      this.getAll();
-    });
+    // Crew c = new Crew(){
+      
+    // }
+    // let item = new Departure(this.FlightNumber,this.DepartureDate,new Crew(){},new Plane(){});
+    // this.service.add(item).subscribe(result=>{
+    //   this.Departures.push(item);
+    //   this.getAll();
+    // });
   }
 
   delete(id: number): void {
