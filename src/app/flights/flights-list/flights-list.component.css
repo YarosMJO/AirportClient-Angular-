@@ -1,0 +1,17 @@
+label
+{
+  color: #fff;
+  opacity: .5;
+}
+
+.input
+{
+  padding: 10px;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid #fff;
+  margin: 10px 0;
+  border-radius: 10px;
+  color: #fff;
+  outline: none;
+}

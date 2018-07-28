@@ -1,14 +1,12 @@
-
 <section>
   <h1>Our FlightAttendants</h1>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-          <th>Id</th>
           <th>Name</th>
-          <th>Surname</th>
-          <th>Birthday</th>
+          <th>Release date</th>
+          <th>Life time</th>
           <th> </th>
         </tr>
       </thead>
@@ -17,14 +15,13 @@
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        <tr *ngFor="let t of FlightAttendants">
-          <td>{{t.id}}</td>
-          <td>{{t.name}} </td>
-          <td>{{t.surname}}</td>
-          <td>{{t.birthday}}</td>
+        <tr *ngFor="let t of Planes">
+          <td>{{t.name}}</td>
+          <td>{{t.releaseDate}} </td>
+          <td>{{t.lifeTime}}</td>
           <td>
             <button class="btn btn-primary" (click)="delete(t.id)" ><i class="far fa-trash-alt "></i></button>
-            <button class="btn btn-primary" [routerLink]="['/flightAttendants',t.id]" ><i class="far fa-edit"></i></button>
+            <button class="btn btn-primary" [routerLink]="['/planes',t.id]" ><i class="far fa-edit"></i></button>
           </td>
         </tr>
       </tbody>
@@ -38,13 +35,13 @@
         <div class="col-md-4 col-sm offset-md-4">
           <form >
               <h3>Add</h3>
-              <label  for="fAtName">Name:</label>
-                <input class="input" placeholder= "Name" name = "fAtName"  [(ngModel)]="Name"/>   
-                <label  for="fAtSurname">Surname:</label>  
-                <input class="input" placeholder= "Surname" name = "fAtSurname"  [(ngModel)]="Surname"/>
+              <label  for="planeName">Name:</label>
+                <input class="input" placeholder= "Name" name = "planeName"  [(ngModel)]="Name"/>   
+                <label  for="planeReleaseDate">Surname:</label>  
+                <input class="input" name = "planeReleaseDate" type = "date" [(ngModel)]="ReleaseDate"/>
       
-                <label  for="pilotBirthday">Birthday:</label>
-                <input class="input" name = "pilotBirthday" type = "date" [(ngModel)]="Birthday"/>
+                <label  for="planeLifeTime">Birthday:</label>
+                <input class="input" name = "planeLifeTime" type = "date" [(ngModel)]="LifeTime"/>
           
               <button type="button" class="btn btn-primary"  (click)="add()">Add</button>
           </form>

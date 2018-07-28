@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { PlaneService } from '../Services/plane.service';
 import { PlaneDetailsComponent } from './plane-details/plane-details.component';
-// import { PlanesListComponent } from './planes-list/airplanes-list.component';
+import { PlanesListComponent } from './planes-list/planes-list.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [
     PlaneDetailsComponent ,
-    // PlanesListComponent
+    PlanesListComponent
     ],
     providers : [PlaneService]
 })
