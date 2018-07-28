@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\ServerSide(WebApi)",
+    "\\ServerSide(WebApi)\\AirportWebApi",
     "\\src",
     "\\src\\app",
     "\\src\\app\\flights",
     "\\src\\app\\flights\\flights-list",
     "\\src\\app\\Models",
     "\\src\\app\\pilots",
-    "\\src\\app\\pilots\\pilots-list",
-    "\\src\\app\\Services"
+    "\\src\\app\\pilots\\pilots-list"
   ],
-  "SelectedNode": "\\src\\app\\Models\\Pilot.ts",
+  "SelectedNode": "\\ServerSide(WebApi)\\AirportWebApi\\AirportWebApi.csproj",
   "PreviewInSolutionExplorer": false
 }

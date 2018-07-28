@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CrewService } from '../Services/crew.service';
 import { CrewDetailsComponent } from './crew-details/crew-details.component';
-// import { CrewsListComponent } from './crews-list/crews-list.component';
+import { CrewsListComponent } from './crews-list/crews-list.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [
     CrewDetailsComponent ,
-    // CrewsListComponent
+    CrewsListComponent
     ],
     providers : [CrewService]
 })

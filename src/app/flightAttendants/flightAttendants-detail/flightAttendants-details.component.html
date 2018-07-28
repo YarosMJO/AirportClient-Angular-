@@ -1,3 +1,24 @@
-s<p>
-  FlightAttendantsDetail!
-</p>
+
+<div>
+    <h1>Flight Attendant datails</h1>
+</div>
+<div *ngIf="FlightAttendant" >
+    <div><h4>FlightAttendant id : {{FlightAttendant.id}}</h4></div>
+    <hr>
+    <div >
+        Pilot name: <input  value="{{FlightAttendant?.name}}" placeholder="{{FlightAttendant?.name}}" 
+        name="FlightAttendantName" [(ngModel)]="FlightAttendant.name" />
+    </div>
+    <div >
+         Pilot surname: <input  value="{{FlightAttendant?.surname}}" placeholder="{{FlightAttendant?.surname}}" 
+        name="FlightAttendantSurname" [(ngModel)]="FlightAttendant.surname" />
+    </div>
+    <div >
+        Pilot birthday: <input value="{{FlightAttendant?.birthday}}" placeholder="{{FlightAttendant?.birthday}}" 
+        name="FlightAttendantBirthday" [(ngModel)]="FlightAttendant.birthday" />
+    </div>
+    <div >
+        <button type="button"  (click)="update(FlightAttendant.id)">Update</button>
+        <button type="button"  (click)="backClicked()">Back</button>
+    </div>
+</div>

@@ -1,7 +1,57 @@
-<h2>Fligths</h2>
-<ul>
-  <li *ngFor="let t of Flights">
-    <span>Flight{{Fuck}} id : {{t.Id}} </span>
-  </li>
-</ul>
 
+<section>
+    <h1>Flights(with delay)</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Departure Point</th>
+            <th>Departure Time</th>
+            <th>Destination</th>
+            <th>Arrival Time</th>
+            <th> </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor="let t of Flights">
+            <td>{{t.departurePoint}}</td>
+            <td>{{t.departureTime}} </td>
+            <td>{{t.destination}}</td>
+            <td>{{t.arrivalTime}}</td>
+            <td>
+              <button class="btn btn-primary" (click)="delete(t.id)" ><i class="far fa-trash-alt "></i></button>
+              <button class="btn btn-primary" [routerLink]="['/flights',t.id]" ><i class="far fa-edit"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <!-- <div class="addElement">
+      <div class="сontainer">
+        <div class="row">
+          <div class="col-md-4 col-sm offset-md-4">
+            <form >
+                <h3>Add</h3>
+                <label  for="pilotName">Name:</label>
+                  <input class="input" placeholder= "Name" name = "pilotName"  [(ngModel)]="Name"/>   
+                  <label  for="pilotSurname">Surname:</label>  
+                  <input class="input" placeholder= "Surname" name = "pilotSurname"  [(ngModel)]="Surname"/>
+        
+                  <label  for="pilotBirthday">Birthday:</label>
+                  <input class="input" name = "pilotBirthday" type = "date" [(ngModel)]="Birthday"/>
+      
+                  <label  for="pilotExperience">Experience:</label>  
+                  <input class="input" placeholder="Experience" name = "pilotExperience" type = "number" [(ngModel)]="Experience"/>
+            
+                <button type="button" class="btn btn-primary"  (click)="add()">Add</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div> -->

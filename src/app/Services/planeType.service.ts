@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PlaneType } from '../Models/PlaneType';
+import { HttpResponse } from 'selenium-webdriver/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlaneTypeService {
-
+  public message:HttpResponse;
   private uri = "http://localhost:51530/api/v1/planeTypes/";
   constructor(private http: HttpClient) { }
 
@@ -15,6 +16,7 @@ export class PlaneTypeService {
   }
 
   add(planeType: PlaneType){
+    this.message = this.http.post(this.uri, planeType);
     return this.http.post(this.uri, planeType);
   }
 

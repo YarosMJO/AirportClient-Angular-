@@ -1,3 +1,28 @@
-<p>
-  flight-detail works!
-</p>
+
+<div>
+    <h1>Flight details</h1>
+</div>
+<div *ngIf="Flight" >
+    <div><h4>Flight id : {{Flight.id}}</h4></div>
+    <hr>
+    <div >
+        Departure Point: <input  value="{{Flight.departurePoint}}" placeholder="{{Flight?.departurePoint}}" 
+        name="pilotName" [(ngModel)]="Flight.departurePoint" />
+    </div>
+    <div >
+        Departure Time: <input  value="{{Flight.departureTime}}" placeholder="{{Flight?.departureTime}}" 
+        name="pilotSurname" [(ngModel)]="Flight.departureTime" />
+    </div>
+    <div >
+        Destination: <input value="{{Flight.destination}}" placeholder="{{Flight?.destination}}" 
+        name="pilotBirthday" [(ngModel)]="Flight.destination" />
+    </div>
+    <div >
+        Destination: <input value="{{Flight.arrivalTime}}" placeholder="{{Flight?.arrivalTime}}" 
+        name="pilotBirthday" [(ngModel)]="Flight.arrivalTime" />
+    </div>
+    <div >
+        <button type="button"  (click)="update(Flight.id)">Update</button>
+        <button type="button"  (click)="backClicked()">Back</button>
+    </div>
+</div>

@@ -1,8 +1,47 @@
 
-<h2>Tickets</h2>
-<ul>
-  <li *ngFor="let t of Tickets">
-    <span>Ticket id : {{t.id}} Price : {{t.price}} Numer : {{t.number}}</span>
-  </li>
-</ul>
+<section>
+  <h1>Tickets</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Price</th>
+          <th> </th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr *ngFor="let t of Tickets">
+          <td>{{t.id}}</td>
+          <td>{{t.price}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="delete(t.id)" ><i class="far fa-trash-alt "></i></button>
+            <button class="btn btn-primary" [routerLink]="['/tickets',t.id]" ><i class="far fa-edit"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
+<div class="addElement">
+    <div class="сontainer">
+      <div class="row">
+        <div class="col-md-4 col-sm offset-md-4">
+          <form >
+              <h3>Add</h3>
+
+                <label  for="ticketPrice">Price:</label>
+                <input class="input" placeholder= "Price" name = "ticketPrice"  [(ngModel)]="Price"/>   
+                <!-- <label  for="ticketNumber">Number:</label>  
+                <input class="input" placeholder= "Number" name = "ticketNumber"  [(ngModel)]="Number"/> -->
+              <button type="button" class="btn btn-primary"  (click)="add()">Add</button>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>

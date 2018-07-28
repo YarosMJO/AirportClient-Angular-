@@ -1,5 +1,5 @@
 export class Ticket{
     constructor(
-        public Price: string,
-        public Number: string) { }
+        public Price: number,
+        public FNumber: number) { }
 }

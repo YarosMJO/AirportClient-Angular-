@@ -1,41 +1,50 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PlaneType } from '../../Models/PlaneType';
+import { PlaneTypeService } from '../../Services/planeType.service';
 
-// @Component({
-//   selector: 'app-plane-types-list',
-//   templateUrl: './plane-types-list.component.html',
-//   styleUrls: ['./plane-types-list.component.css']
-// })
-// export class PlaneTypesListComponent implements OnInit {
+@Component({
+  selector: 'app-planeTypes-list',
+  templateUrl: './plane-types-list.component.html',
+  styleUrls: ['./plane-types-list.component.css'],
+  providers: [PlaneTypeService]
+})
+export class PlaneTypesListComponent implements OnInit {
 
-//   constructor(public service: PilotService) {}
+  PlaneTypes: Array<PlaneType>;
 
-//   ngOnInit() {
-//     this.getAll();
-//   }
+  public Model: string;
+  public SeatsCapacity: number;
+  public Carrying: number;
+  public LifeTime: Date;
 
-//   getAll() {
-//     this.service.getAll().subscribe((items:Array<Pilot>) => {
-//       this.Pilots = items; });
-//   }
+  constructor(public service: PlaneTypeService) {}
 
-//   add(){
-//     let item = new Pilot(this.Name,this.Surname,this.Birthday,this.Experience);
-//     this.service.add(item).subscribe(result=>{
-//       this.Pilots.push(item);
-//       this.getAll();
-//     });
-//   }
+  ngOnInit() {
+    this.getAll();
+  }
 
-//   delete(id: number): void {
-//     this.service.delete(id).subscribe( result => {
-//       this.getAll();
-//     });   
-//   }
+  getAll() {
+    this.service.getAll().subscribe((items:Array<PlaneType>) => {
+      this.PlaneTypes = items; });
+  }
 
-//    update(id:number,item: Pilot){
-//     this.service.update(id,item).subscribe(result=>{
-//       this.getAll();
-//     });
-//   }
+  add(){
+    let item = new PlaneType(this.Model,this.Carrying,this.SeatsCapacity,this.LifeTime);
+    this.service.add(item).subscribe(result=>{
+      this.PlaneTypes.push(item);
+      this.getAll();
+    });
+  }
 
-// }
+  delete(id: number): void {
+    this.service.delete(id).subscribe( result => {
+      this.getAll();
+    });   
+  }
+
+   update(id:number,item: PlaneType){
+    this.service.update(id,item).subscribe(result=>{
+      this.getAll();
+    });
+  }
+}
